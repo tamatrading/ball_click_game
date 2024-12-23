@@ -154,7 +154,7 @@ const Game = () => {
     );
 
     setScore(prevScore => {
-      const newScore = prevScore + 5;
+      const newScore = prevScore + 10;
       if (newScore % 25 === 0) {
         setCharacterEmotion('excited');
         setCharacterMessage('すごい！ がんばってるね！');
