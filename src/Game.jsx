@@ -48,6 +48,16 @@ const CongratulationsMessage = ({ elapsedTime, onRestart }) => (
         もういっかいする
       </Button>
     </div>
+    <a
+      href="https://mouselesson.manabi-time.com"
+      className="fixed bottom-4 right-4"
+    >
+      <Button
+        className="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+      >
+        もどる
+      </Button>
+    </a>
     <div className="absolute inset-0 pointer-events-none overflow-hidden">
       {[...Array(50)].map((_, i) => (
         <div key={i} 
