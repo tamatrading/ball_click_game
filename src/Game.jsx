@@ -70,17 +70,17 @@ const CongratulationsMessage = ({ elapsedTime, onRestart }) => (
       >
         もういっかいする
       </Button>
-    </div>
-    <a
-      href="https://mouselesson.manabi-time.com"
-      className="fixed bottom-4 right-4"
-    >
-      <Button
-        className="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+      <a
+        href="https://mouselesson.manabi-time.com"
+        className="mt-4"
       >
-        もどる
-      </Button>
-    </a>
+        <Button
+          className="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+        >
+          もどる
+        </Button>
+      </a>
+    </div>
     <div className="absolute inset-0 pointer-events-none overflow-hidden">
       {[...Array(50)].map((_, i) => (
         <div key={i} 
@@ -223,14 +223,14 @@ const Game = () => {
     >
       <div className="w-full max-w-2xl relative">
         <h1 className="text-2xl font-bold mb-4 text-center">カラフルぼーるわりゲーム</h1>
-        <div className="flex justify-center mb-6">
+        <div className="relative flex justify-center mb-6">
           <div className="bg-white rounded-full px-8 py-2 shadow-md text-4xl font-bold text-orange-500">
             てんすう {score}
           </div>
-        </div>
-        <div className="absolute top-4 right-4 flex items-center space-x-2 bg-white rounded-full px-4 py-2 shadow-md">
-          <Timer className="w-5 h-5 text-blue-500" />
-          <span className="text-lg font-bold text-blue-500">{elapsedTime}びょう</span>
+          <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center space-x-2 bg-white rounded-full px-4 py-2 shadow-md">
+            <Timer className="w-5 h-5 text-blue-500" />
+            <span className="text-lg font-bold text-blue-500">{elapsedTime}びょう</span>
+          </div>
         </div>
 
         {showWarning && (
@@ -254,18 +254,16 @@ const Game = () => {
           <AnimalCharacter emotion={characterEmotion} className="w-20 h-20" />
           <div className="bg-white rounded-2xl px-4 py-2 shadow-md text-lg font-bold max-w-[180px]">{characterMessage}</div>
         </div>
+        <div className="mt-6 flex justify-center">
+          <a href="https://mouselesson.manabi-time.com">
+            <Button
+              className="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+            >
+              もどる
+            </Button>
+          </a>
+        </div>
       </div>
-
-      <a
-        href="https://mouselesson.manabi-time.com"
-        className="fixed bottom-4 right-4"
-      >
-        <Button
-          className="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
-        >
-          もどる
-        </Button>
-      </a>
       {showCongratulations && <CongratulationsMessage elapsedTime={elapsedTime} onRestart={initializeGame} />}
     </div>
   );
